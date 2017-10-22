@@ -2,12 +2,12 @@
 Turn a "c51 4bit clock" in a 24h timer
 
 You can buy this clock for 1$ shipped on aliexpress and it works as expected, but you can not change the software. 
-I've bought a pair of this clock to turn them in a timer changing a little bit the code, but the cpu used is a 89c2051 with only parallel programming interface (the 89s2051 has a serial mode much easier to use) and I had no patience to put together such a device.
+I've bought a pair of this clocks to turn them in a timer changing a little bit the code, but the cpu used is a 89c2051 with only parallel programming interface (the 89s2051 has a serial mode much easier to use) and I had no patience to put together such a device.
 The source code is not available and, to be honest, is pointless to mess with a 8051 cpu when you can get a much easier AVR and the Arduino IDE.
 
 What is missing in this clock to turn it in a timer?
-It is really easy to hoock a relais instead the beeper but there are some problems.
-First the default setup is orrible: it start, after a reset, at 12:59 with hourly chimes at 13:00, first alarm at 13:01 and second alarm at 13:02.
+It is really easy to hook a relais instead the beeper but there are some problems.
+First the default setup is horrible: it start, after a reset, at 12:59 with hourly chimes at 13:00, first alarm at 13:01 and second alarm at 13:02.
 Moreover every button click generates a beep.
 
 The target are these two: remove the buttons beep and stop the default alarms.
@@ -39,12 +39,14 @@ U1                            1   4093
 U2                            1   4017
 U3                            1   LM7805
 
+The hooking points to the original clock are:
 
+![Screenshot](c51_4BIT_clock.jpg)
 
 
 The final assembly is:
 
-![Screenshot](c51_4BIT_clock.jpg)
+![Screenshot](complete_device.jpg)
 
 
 At startup you have to program the two alarms to on/off the relais. Moreover you have to disable the hourly chimes.
