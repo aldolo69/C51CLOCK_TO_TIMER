@@ -20,7 +20,7 @@ So I need:
 -a circuit to toggle a relais on regular alarms
 -a circuit to switch on and off the relais manually
 
-![Screenshot](timer_from_4bit_clock.GIF)
+![Screenshot](timer_from_4bit_clock_.GIF)
 
 
 C1                            1   470uF
